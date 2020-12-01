@@ -1,5 +1,5 @@
 # EDIT this workflow name
-name: Push to ghcr
+name: Push to DockerHub
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 env:
   # EDIT this env variable
-  IMAGE_ID: ghcr.io/t-k-/docker-ss
+  IMAGE_ID: docker.io/approach0/docker-ss
 
 jobs:
 
@@ -23,7 +23,7 @@ jobs:
 
     # EDIT this Docker registry credentials
     - name: Docker registry login
-      run: echo "${{ secrets.GITHUBPAT }}" | docker login ghcr.io -u 't-k-' --password-stdin
+      run: echo "${{ secrets.DOCKERHUBPASSWORD }}" | docker login docker.io -u approach0 --password-stdin
 
     - name: Push image
       run: |
