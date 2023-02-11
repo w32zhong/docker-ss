@@ -11,6 +11,10 @@ docker pull approach0/docker-ss
 ```sh
 docker run --net=host -p 80:80 -it approach0/docker-ss
 ```
+alternatively, as daemon
+```sh
+docker run --net=host -p 80:80 -d approach0/docker-ss
+```
 
 ### Client side
 ```sh
